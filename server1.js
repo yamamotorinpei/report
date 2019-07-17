@@ -11,8 +11,8 @@ var connection = mysql.createConnection({
     database: 'web'
 });
 
-server.get('/', function( req, res ) {
-    connection.query('select id, 都道府県, 人口 from example order by 人口 desc limit 10;', (error, rows, fields) => {
+server.get('/fight', function( req, res ) {
+    connection.query('select id, year,player_id from fight inner join player on fight.player_id=player.id;', (error, rows, fields) => {
         if( error ) {
             console.log('Query Error');
         }
