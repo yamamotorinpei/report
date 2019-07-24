@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
     database: 'web'
 });
 
-server.get('/', function( req, res ) {
+server.get('/wr', function( req, res ) {
     let sorting = req.query.sorting || 'WR';
     let number = req.query.number || 10;
     let query = 'select id, yaer, ' + sorting + ' from example order by ' + sorting + ' desc limit ' + number + ';';
