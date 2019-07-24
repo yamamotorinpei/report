@@ -14,7 +14,8 @@ var connection = mysql.createConnection({
 server.get('/', function( req, res ) {
     let sorting = req.query.sorting || 'WR';
     let number = req.query.number || 10;
-    let query = 'select id, yaer, player_id,team_id,' + sorting + ' from fight order by ' + sorting + ' desc limit ' + number + ';';
+    //let query = 'select id, yaer, player_id,team_id,' + sorting + ' from fight order by ' + sorting + ' desc limit ' + number + ';';
+    let qeury = 'select id, year, player_id,team_id,' + sorting + ' from fight order by ' + sorting + ' desc limit ' + number + ';';
     console.log( query );
     connection.query( query, (error, rows, fields) => {
         if( error ) {
