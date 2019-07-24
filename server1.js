@@ -43,6 +43,7 @@ server.get('/teams', function( req, res ) {
         res.render( 'team.ejs', { content: rows });
     });
 });
+
 server.listen( 80, function() {
     console.log( 'listening on port 80' );
 });
