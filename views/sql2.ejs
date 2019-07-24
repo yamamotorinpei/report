@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang=ja>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+    <table>
+        <% for( let result of content ) { %>
+        <tr>
+            <td><%= result.id %></td>
+            <td><%= result['year'] %></td>
+            <td><%= result['WR'] %></td>
+            <td><%= result['OV'] %></td>
+            <td><%= result['TV'] %></td>
+        </tr>
+        <% } %>
+    </table>
+    <form action="/" method="get">
+        並び順：<select name="sorting">
+            <option value="勝率">勝率</option>
+            <option value="1対1">１対１</option>
+            <option value="２対２">２対２</option>
+        </select>
+        表示数：<input type="text" name="number" size="10">
+        <input type="submit" value="並び替える">
+    </form>
+</body>
+</html>
