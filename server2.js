@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 server.get('/', function( req, res ) {
     let sorting = req.query.sorting || 'WR';
     let number = req.query.number || 10;
-    let query = 'select fight.year, fight.OV, fight.TV, player.name, team.name, ' + sorting + ' from fight inner join player on fight.player_id = player.id inner join team on fight.team_id = team.id order by ' + sorting + ' desc limit ' + number + ';';
+    let query = 'select fight.year, fight.OV, fight.TV, player.player_name, team.team_name, ' + sorting + ' from fight inner join player on fight.player_id = player.id inner join team on fight.team_id = team.id order by ' + sorting + ' desc limit ' + number + ';';
     console.log( query );
     connection.query( query, (error, rows, fields) => {
         if( error ) {
