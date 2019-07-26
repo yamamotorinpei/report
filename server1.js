@@ -21,28 +21,6 @@ server.get('/fight', function( req, res ) {
         res.render( 'sql.ejs', { content: rows });
     });
 });
-server.get('/players', function( req, res ) {
-
-    let query = "select * from player;";
-    console.log( query );
-    connection.query( query, (error, rows, fields) => {
-        if( error ) {
-            console.log('Query Error');
-        }
-        res.render( 'player.ejs', { content: rows });
-    });
-});
-server.get('/teams', function( req, res ) {
-
-    let query = "select * from team;";
-    console.log( query );
-    connection.query( query, (error, rows, fields) => {
-        if( error ) {
-            console.log('Query Error');
-        }
-        res.render( 'team.ejs', { content: rows });
-    });
-});
 
 server.listen( 80, function() {
     console.log( 'listening on port 80' );
