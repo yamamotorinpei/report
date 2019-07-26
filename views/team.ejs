@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang=ja>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+    <table>
+        <% for( let result of content ) { %>
+        <tr>
+<td><%= result.id %></td>
+            <%= result['WR'] %></td>td>
+            <td><%= result['team_id'] %></td>
+            
+        </tr>
+        <% } %>
+    </table>
+    <form action="/" method="get">
+        並び順：<select name="sorting">
+            <option value="チーム名">チーム名</option>>
+        </select>
+        表示数：<input type="text" name="number" size="10">
+        <input type="submit" value="並び替える">
+    </form>
+</body>
+</html>
