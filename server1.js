@@ -43,6 +43,17 @@ server.get('/teams', function( req, res ) {
         res.render( 'team.ejs', { content: rows });
     });
 });
+server.get('/agg', function( req, res ) {
+
+    let query = "select * max(WR)from fight;";
+    console.log( query );
+    connection.query( query, (error, rows, fields) => {
+        if( error ) {
+            console.log('Query Error');
+        }
+        res.render( 'sql.ejs', { content: rows });
+    });
+});
 server.listen( 80, function() {
     console.log( 'listening on port 80' );
 });
