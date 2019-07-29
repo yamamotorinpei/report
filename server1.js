@@ -45,7 +45,7 @@ server.get('/teams', function( req, res ) {
 });
 server.get('/agg', function( req, res ) {
 
-    let query = "select  max(WR) from fight;";
+    let query = "select * max(WR) from fight;";
     console.log( query );
     connection.query( query, (error, rows, fields) => {
         if( error ) {
